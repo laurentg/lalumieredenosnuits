@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>La lumière de nos nuits</title>
+  <meta name="description" content="La lumière de nos nuits - documents" />
+  <meta name="robots" content="noindex" />
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <h1>La lumière de nos nuits</h1>
+  <p><strong>Avertissement&nbsp;:</strong> Le lecteur pourra consulter sur ce site la plupart des documents 
+    utilisés pour l’écriture de La lumière de nos nuits parmi ceux indiqués dans les notes de fin d’ouvrage.
+    Le référencement (numéro initial d'identification du fichier) est identique et l'ordre correspond à celui de présentation dans le récit.
+    L’auteure, en concertation avec la famille, se réserve le droit de modifier à tout moment la liste de ces archives accessibles librement.
+    Pour tous ces documents&nbsp;: &copy; tous droits réservés. Toutes reproductions et utilisations interdites sous peine de poursuites.
+  </p>
+  <h2>Index des illustrations</h2>
+  <ul>
+    {{#each collections.pages}}
+    <li>
+      <a href="{{path}}"><b>{{id}}</b> — {{titre}}</a>
+    </li>
+    {{/each}}
+  </ul>
+  <p class="footer">
+    Copyright &copy; Descendants de Victor Poirier et Lucienne Réthoré
+  </p>
+</body>
+
+</html>

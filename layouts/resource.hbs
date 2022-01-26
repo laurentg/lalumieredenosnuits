@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{id}} - {{titre}}</title>
+  <meta name="description" content="La lumière de nos nuits - {{titre}}" />
+  <meta name="robots" content="noindex" />
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <h1>La lumière de nos nuits</h1>
+  <p><a href="index.html">← Retour à l'index</a></p>
+  <h2>{{id}} - {{titre}}</h2>
+  {{#if legende}}
+    <p>{{legende}}</p>
+  {{/if}}
+  {{#each resources}}
+    {{#if isimage}}
+      <p><img class="fitscreen" src="{{filename}}"></img></p>
+    {{/if}}
+    {{#if ispdf}}
+      <object data="{{filename}}" type="application/pdf" width="100%" height="1200px">
+        <p><a href="{{filename}}">Cliquez ici pour afficher le PDF</a></p>
+      </object>
+    {{/if}}
+  {{/each}}
+  <p class="footer">
+    Copyright &copy; Descendants de Victor Poirier et Lucienne Réthoré
+  </p>
+</body>
+
+</html>
