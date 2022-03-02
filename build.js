@@ -30,18 +30,21 @@ function resource_plugin(options) {
           rscs.sort((a, b) => a.filename.localeCompare(b.filename));
         }
       }
-      let index = 0;
       for (let i in listing) {
+        i = parseInt(i);
         let e = listing[i];
+        let ePrev = i == 0 ? null : listing[i - 1];
+        let eNext = i == listing.length - 1 ? null : listing[i + 1];
         let rscs = resources.get(e.id);
-        // console.log(rscs);
         if (!rscs) {
-          console.log("Attention: Légende ID " + e.id + ": pas de resources.");
+          console.log("Attention: Légende ID " + e.id + ": pas de ressources. (" + e.titre + ")");
         } else {
           files['resource_' + e.id + '.html'] = {
             id: e.id,
+            previd: ePrev == null ? null : ePrev.id,
+            nextid: eNext == null ? null : eNext.id,
             titre: e.titre,
-            index: index,
+            index: i,
             legende: e.legende,
             contents: '',
             layout: 'resource.hbs',
@@ -49,10 +52,9 @@ function resource_plugin(options) {
           };
           resources.delete(e.id);
         }
-        index++;
       }
       resources.forEach((v, k) => {
-          console.log("Attention: Resource ID " + k + ": pas de légende.");
+          console.log("Attention: Ressource ID " + k + ": pas de légende.");
       });
     }
     done();

@@ -5,13 +5,22 @@
   <meta charset="utf-8">
   <title>{{id}} - {{titre}}</title>
   <meta name="description" content="La lumière de nos nuits - {{titre}}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex" />
   <link href="css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
   <h1>La lumière de nos nuits</h1>
-  <p><a href="index.html">← Retour à l'index</a></p>
+  <p>
+    <a href="index.html">◄◄ Retour à l'index</a>
+    {{#if previd}}
+      | <a href="resource_{{previd}}.html">◄ Précédent</a>
+    {{/if}}
+    {{#if nextid}}
+      | <a href="resource_{{nextid}}.html">Suivant ►</a>
+    {{/if}}
+  </p>
   <h2>{{id}} - {{titre}}</h2>
   {{#if legende}}
     <p>{{legende}}</p>
